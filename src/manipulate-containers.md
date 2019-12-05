@@ -8,7 +8,7 @@
 ### Из чего состоит образ
 * FS Snapshot - файловая система
 * Startup command - комманда с которой запускаеться образ
-![](../assets/Screenshot_1.png)
+![](./assets/Screenshot_1.png)
 
 
 
@@ -106,14 +106,14 @@ docker kill <container-id>
 ### Мульти-комманды для контейнера (exec, "-it")
 `docker exec` - выполнение дополнительной комманды в контейнере
 
-![](../assets/Screenshot_2.png)
+![](./assets/Screenshot_2.png)
 
 
 ```sh
 docker run redis
 # gives <container-id> OR docker ps
 
-# "-it" - gives us access to a redis-cli inside of container
+# "-it" - gives an access to a redis-cli inside of container
 docker exec -it <container-id> redis-cli
 # OR "-i -t"
 # "-i" - means that what you type in local console must get into container
@@ -143,7 +143,7 @@ docker exec -it <container-id> sh
 
 
 
-### Запуск контейнера с Shell
+### Запуск контейнера с Shell (run, "-it", sh)
 ```sh
 docker run -it busybox sh
 # ls
