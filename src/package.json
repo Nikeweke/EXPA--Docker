@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "Docker-EXPA",
   "version": "1.0.0",
   "description": "---\r home: true\r heroImage: https://image.flaticon.com/icons/svg/52/52330.svg\r actionText: Get Started →\r actionLink: /manipulate-containers/intro.md\r footer: MIT Licensed | Copyright © 2018-present Nikeweke\r ---",
   "main": "index.js",

@@ -14,6 +14,8 @@ module.exports = {
 
       '../manipulate-containers.md',
 
+      '../build-image.md',
+
       // require('../manipulate-containers/__index'),
 
       // {
