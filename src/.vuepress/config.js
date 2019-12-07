@@ -14,7 +14,7 @@ module.exports = {
 
       '../manipulate-containers.md',
 
-      '../build-image.md',
+      '../build-images.md',
 
       '../docker-compose.md',
 

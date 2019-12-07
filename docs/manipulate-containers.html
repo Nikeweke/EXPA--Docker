@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Управление контейнерами | Docker</title>
+    <meta name="description" content="Dockerize your app">
+    
+    
+    <link rel="preload" href="/EXPA--Docker/assets/css/0.styles.16309901.css" as="style"><link rel="preload" href="/EXPA--Docker/assets/js/app.27599a2c.js" as="script"><link rel="preload" href="/EXPA--Docker/assets/js/2.41402e47.js" as="script"><link rel="preload" href="/EXPA--Docker/assets/js/6.c61d993e.js" as="script"><link rel="prefetch" href="/EXPA--Docker/assets/js/10.0f50426b.js"><link rel="prefetch" href="/EXPA--Docker/assets/js/11.47ba2160.js"><link rel="prefetch" href="/EXPA--Docker/assets/js/3.e489d2d2.js"><link rel="prefetch" href="/EXPA--Docker/assets/js/4.307b08c8.js"><link rel="prefetch" href="/EXPA--Docker/assets/js/5.43928aa7.js"><link rel="prefetch" href="/EXPA--Docker/assets/js/7.86c0ff0c.js"><link rel="prefetch" href="/EXPA--Docker/assets/js/8.447d83ee.js"><link rel="prefetch" href="/EXPA--Docker/assets/js/9.103ac48d.js">
+    <link rel="stylesheet" href="/EXPA--Docker/assets/css/0.styles.16309901.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/EXPA--Docker/" class="home-link router-link-active"><!----> <span class="site-name">Docker</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/EXPA--Docker/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/Nikeweke/EXPA--Docker.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  To repository
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/EXPA--Docker/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/Nikeweke/EXPA--Docker.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  To repository
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/EXPA--Docker/manipulate-containers.html" class="active sidebar-link">Управление контейнерами</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/EXPA--Docker/build-images.html" class="sidebar-link">Создание образов</a></li><li><a href="/EXPA--Docker/docker-compose.html" class="sidebar-link">Docker compose</a></li><li><a href="/EXPA--Docker/commands.html" class="sidebar-link">Most used commands</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="управnение-контейнерами"><a href="#управnение-контейнерами" class="header-anchor">#</a> Управление контейнерами</h1> <p></p><div class="table-of-contents"><ul><li><a href="#из-чего-состоит-образ">Из чего состоит образ</a></li><li><a href="#перегрузка-стандартной-комманды-образа">Перегрузка стандартной комманды образа</a></li><li><a href="#список-контейнеров">Список контейнеров</a></li><li><a href="#разница-между-run-create-start">Разница между run, create &amp; start</a></li><li><a href="#перезапуск-остановnенного-контейнера">Перезапуск остановленного контейнера</a></li><li><a href="#очистка-docker">Очистка docker</a></li><li><a href="#логи-контейнера">Логи контейнера</a></li><li><a href="#остановка-контейнера-stop-kill">Остановка контейнера (stop, kill)</a></li><li><a href="#муnьти-комманды-дnя-контейнера-exec-it">Мульти-комманды для контейнера (exec, &quot;-it&quot;)</a></li><li><a href="#подкnючение-к-контейнеру-exec-it-sh">Подключение к контейнеру (exec, &quot;-it&quot;, sh)</a></li><li><a href="#запуск-контейнера-с-shell-run-it-sh">Запуск контейнера с Shell (run, &quot;-it&quot;, sh)</a></li></ul></div><p></p> <hr> <h3 id="из-чего-состоит-образ"><a href="#из-чего-состоит-образ" class="header-anchor">#</a> Из чего состоит образ</h3> <ul><li>FS Snapshot - файловая система</li> <li>Startup command - комманда с которой запускаеться образ
+<img src="/EXPA--Docker/assets/img/Screenshot_1.0add028e.png" alt=""></li></ul> <h3 id="перегрузка-стандартной-комманды-образа"><a href="#перегрузка-стандартной-комманды-образа" class="header-anchor">#</a> Перегрузка стандартной комманды образа</h3> <p><code>docker run &lt;image-name&gt; [command]</code> <code>[command]</code> - перегрузит комманду с которой запускаеться контейнер</p> <div class="language- extra-class"><pre class="language-text"><code>docker run busybox echo hi there
+docker run busybox ls
+</code></pre></div><h3 id="список-контейнеров"><a href="#список-контейнеров" class="header-anchor">#</a> Список контейнеров</h3> <ul><li><code>docker ps</code></li> <li><code>docker ps -a</code></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># start checking latency from container of google</span>
+docker run busybox <span class="token function">ping</span> google.com
+
+<span class="token comment"># show containers that works</span>
+docker <span class="token function">ps</span>
+</code></pre></div><h3 id="разница-между-run-create-start"><a href="#разница-между-run-create-start" class="header-anchor">#</a> Разница между <code>run</code>, <code>create</code> &amp; <code>start</code></h3> <ul><li><code>docker run</code> = <code>docker create</code> + <code>docker start</code></li> <li><code>docker create</code> - переносит из образа FS Snapshot в контейнер</li> <li><code>docker start</code> - запускает комманду в контейнере и запускает контейнер</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># moving FS Snaphot to a container (preparing container) </span>
+docker create hello-world
+c3065b4577668eefc26b8d43fd8a56a4588a5f1770bab7bc14ff7b89ea7ad9df
+
+<span class="token comment"># running container with command</span>
+<span class="token comment"># &quot;-a&quot; - output logs from container in my console</span>
+docker start -a c3065b4577668eefc26b8d43fd8a56a4588a5f1770bab7bc14ff7b89ea7ad9df
+</code></pre></div><h3 id="перезапуск-остановnенного-контейнера"><a href="#перезапуск-остановnенного-контейнера" class="header-anchor">#</a> Перезапуск остановленного контейнера</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>docker <span class="token function">ps</span> -a
+
+docker start <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span>
+docker start -a <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span>
+
+<span class="token comment"># you cannot start stopped container with new command</span>
+<span class="token comment"># docker start -a &lt;container-id&gt; echo bye there</span>
+</code></pre></div><h3 id="очистка-docker"><a href="#очистка-docker" class="header-anchor">#</a> Очистка docker</h3> <p>Удаление всего что связано с docker</p> <div class="language- extra-class"><pre class="language-text"><code>docker system prune 
+docker system prune -a
+</code></pre></div><h3 id="логи-контейнера"><a href="#логи-контейнера" class="header-anchor">#</a> Логи контейнера</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>docker create busybox <span class="token builtin class-name">echo</span> hi there
+<span class="token comment"># it will give you - &lt;container-id&gt;</span>
+
+docker start <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span>
+
+docker logs <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="остановка-контейнера-stop-kill"><a href="#остановка-контейнера-stop-kill" class="header-anchor">#</a> Остановка контейнера (stop, kill)</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>docker create busybox <span class="token function">ping</span> google.com
+<span class="token comment"># &lt;container-id&gt;</span>
+
+docker start <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span>
+
+<span class="token comment"># gives container SIGTERM inside container</span>
+docker stop <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span> 
+
+<span class="token comment"># gives container SIGKILL inside container </span>
+docker <span class="token function">kill</span> <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="муnьти-комманды-дnя-контейнера-exec-it"><a href="#муnьти-комманды-дnя-контейнера-exec-it" class="header-anchor">#</a> Мульти-комманды для контейнера (exec, &quot;-it&quot;)</h3> <p><code>docker exec</code> - выполнение дополнительной комманды в контейнере</p> <p><img src="/EXPA--Docker/assets/img/Screenshot_2.d63c8b74.png" alt=""></p> <div class="language-sh extra-class"><pre class="language-sh"><code>docker run redis
+<span class="token comment"># gives &lt;container-id&gt; OR docker ps</span>
+
+<span class="token comment"># &quot;-it&quot; - gives an access to a redis-cli inside of container</span>
+docker <span class="token builtin class-name">exec</span> -it <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span> redis-cli
+<span class="token comment"># OR &quot;-i -t&quot;</span>
+<span class="token comment"># &quot;-i&quot; - means that what you type in local console must get into container</span>
+<span class="token comment"># &quot;-t&quot; - format text (u may see no identifying cursor if this flag absent)</span>
+
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span>set myvalue <span class="token number">5</span>
+OK
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span>get myvalue
+<span class="token string">&quot;5&quot;</span>
+</code></pre></div><h3 id="подкnючение-к-контейнеру-exec-it-sh"><a href="#подкnючение-к-контейнеру-exec-it-sh" class="header-anchor">#</a> Подключение к контейнеру (exec, &quot;-it&quot;, sh)</h3> <p><strong>sh</strong> - command processor unix (like powershell for windows)</p> <div class="language-sh extra-class"><pre class="language-sh"><code>docker <span class="token function">ps</span> 
+
+<span class="token comment"># getting into container itself</span>
+docker <span class="token builtin class-name">exec</span> -it <span class="token operator">&lt;</span>container-id<span class="token operator">&gt;</span> <span class="token function">sh</span>
+<span class="token comment"># ls</span>
+<span class="token comment"># cd /</span>
+
+<span class="token comment"># FOR EXIT from container CTRL+D or type &quot;exit&quot;</span>
+</code></pre></div><h3 id="запуск-контейнера-с-shell-run-it-sh"><a href="#запуск-контейнера-с-shell-run-it-sh" class="header-anchor">#</a> Запуск контейнера с Shell (run, &quot;-it&quot;, sh)</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>docker run -it busybox <span class="token function">sh</span>
+<span class="token comment"># ls</span>
+<span class="token comment"># echo hi there</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/EXPA--Docker/build-images.html">Создание образов</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/EXPA--Docker/assets/js/app.27599a2c.js" defer></script><script src="/EXPA--Docker/assets/js/2.41402e47.js" defer></script><script src="/EXPA--Docker/assets/js/6.c61d993e.js" defer></script>
+  </body>
+</html>
