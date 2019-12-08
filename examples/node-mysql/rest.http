@@ -1,0 +1,22 @@
+### Get tasks
+GET http://localhost:8000/tasks
+
+### Add task
+POST http://localhost:8000/task
+content-type: application/json
+
+{ 
+  "task": "take a pee" 
+}
+
+
+### Get tasks(docker-win)
+GET http://192.168.99.100:8000/tasks
+
+### Add task (docker-win)
+POST http://192.168.99.100:8000/task
+content-type: application/json
+
+{ 
+  "task": "take baka" 
+}

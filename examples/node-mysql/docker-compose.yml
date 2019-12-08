@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web: 
+    container_name: "web_service"
+    build: ./web-service
+    env_file: .env
+    ports:
+      - '${WEB_PORT}:${WEB_PORT}'
+    # depends_on:
+    #   - "${MYSQL_HOST}"
+    volumes:
+      - ./web-service:/app
+      # - /app/node_modules
+    # command: nodemon --debug=5858
+    
+  # db:
+  #   container_name: "database-service"
+  #   build: ./database-service
+  #   env_file: .env
+  #   ports:
+  #     - "3306:3306"
+
+  #   # https://stackoverflow.com/questions/39175194/docker-compose-persistent-data-mysql
+  #   # allow to save data from container
+  #   volumes:
+  #     - ./mysql_data:/var/lib/mysql
+

@@ -1,0 +1,19 @@
+version: '3'
+
+# when starting containers - docker automatically
+# makes network for specified services(containers)
+# where they can connect each other
+
+# service same as container here
+services: 
+  redis-server:
+    image: 'redis'
+  
+  node-app: 
+    build: ./node-app
+    ports: 
+      - '8000:8000'
+
+    # wait for redis-server start up
+    depends_on: 
+      - redis-server
