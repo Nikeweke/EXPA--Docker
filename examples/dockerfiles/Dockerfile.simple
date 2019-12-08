@@ -1,0 +1,13 @@
+# The most lightweight image
+FROM alpine:3.8
+
+# script.sh
+# echo Hello from script
+
+# Defines start dir for RUN, CMD, ENTRYPOINT, COPY and ADD
+# WORKDIR /usr/bin/ss
+
+# copying script into image
+COPY script.sh /script.sh
+
+CMD ["sh", "script.sh"]

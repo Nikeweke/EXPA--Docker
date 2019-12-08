@@ -18,14 +18,9 @@ module.exports = {
 
       '../docker-compose.md',
 
-      '../commands.md',
+      // require('../docker-compose/__index'),
 
-      // require('../manipulate-containers/__index'),
-      // {
-      //   title: 'Frontend',
-      //   collapsable: true,
-      //   children: require('../frontend/__index')
-      // },
+      '../commands.md',
     ]
   }
 }
