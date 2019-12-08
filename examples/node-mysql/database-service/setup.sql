@@ -1,9 +1,10 @@
 /***CREATING TASK TABLE*/
 
--- FIX issue with ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+-- FIX issue if not set in docker-compose auth mode
+-- with ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
 -- user and password from .env
-ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY '12345'; 
-FLUSH PRIVILEGES;
+-- ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY '12345'; 
+-- FLUSH PRIVILEGES;
 
 
 DROP TABLE IF EXISTS `tasks`;

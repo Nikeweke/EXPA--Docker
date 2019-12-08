@@ -6,22 +6,16 @@ services:
     env_file: .env
     ports:
       - '${WEB_PORT}:${WEB_PORT}'
-    # depends_on:
-    #   - "${MYSQL_HOST}"
-    volumes:
-      - ./web-service:/app
-      # - /app/node_modules
-    # command: nodemon --debug=5858
+    depends_on:
+      - "${MYSQL_HOST}"
     
-  # db:
-  #   container_name: "database-service"
-  #   build: ./database-service
-  #   env_file: .env
-  #   ports:
-  #     - "3306:3306"
+  db:
+    container_name: "database-service"
+    build: ./database-service
+    command: --default-authentication-plugin=mysql_native_password
+    env_file: .env
+    volumes:
+      - ./mysql_data:/var/lib/mysql
 
-  #   # https://stackoverflow.com/questions/39175194/docker-compose-persistent-data-mysql
-  #   # allow to save data from container
-  #   volumes:
-  #     - ./mysql_data:/var/lib/mysql
+      
 
