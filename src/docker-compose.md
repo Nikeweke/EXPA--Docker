@@ -63,3 +63,11 @@ services:
       - redis-server
     restart: always
 ```
+
+
+### Создание дополнительных сервисов (scale, nginx, load-balancer)
+Также надо изменить свой docker-compose в соотвествии с [инструкциями](https://pspdfkit.com/blog/2018/how-to-use-docker-compose-to-run-multiple-instances-of-a-service-in-development/)
+
+```
+docker-compose up --scale web=3
+```
