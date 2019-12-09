@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: .
+    depends_on:
+      - rethinkdb
+    ports:
+      - '8000:8000'
+
+  rethinkdb:
+    image: rethinkdb
+    ports:
+     - '28015'
+     - '8081:8080' # For db UI
+    volumes:
+     - ./data:/data
+    command: rethinkdb --bind all -d /data
