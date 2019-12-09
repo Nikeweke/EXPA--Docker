@@ -17,9 +17,6 @@ CMD ["./app"]
 
 ## Simple dockefile
 # FROM golang:alpine
-
 # WORKDIR /app
-
 # COPY ./app ./
-
 # CMD ["./app"]
