@@ -5,7 +5,8 @@
 * [Docker complete guide](https://rutracker.org/forum/viewtopic.php?t=5608449)
 * [Kubernets in nutshell](https://medium.com/google-cloud/kubernetes-101-pods-nodes-containers-and-clusters-c1509e409e16)
 * [12 tools for Docker](https://proglib.io/p/12-docker-tools/)
-* FromLatest - https://www.fromlatest.io/#/ - для оптимизации `Dockerfile`
+* [FromLatest](https://www.fromlatest.io/#/) - для оптимизации `Dockerfile`
+* [MySQL Basics in Docker](https://severalnines.com/database-blog/mysql-docker-containers-understanding-basics)
 
 --- 
 
