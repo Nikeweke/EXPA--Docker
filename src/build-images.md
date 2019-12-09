@@ -24,6 +24,7 @@ docker build .
 
 # getting <image-id> OR docker images
 docker run <image-id>
+
 ```
 
 
@@ -101,4 +102,19 @@ COPY ./ ./
 # Tell the image what to do when it starts as container
 CMD ["node", "app"]
 
+```
+
+### Построение образа с указанием определнного dockerfile
+```sh
+docker build -f Dockerfile.dev .
+```
+
+в `docker-compose.yml` вот так
+```yml
+version: '3'
+services: 
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
 ```
