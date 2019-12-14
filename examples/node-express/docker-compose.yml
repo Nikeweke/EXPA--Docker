@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  web:
+    container_name: "node_app"
+    build: 
+      context: .
+      dockerfile: Dockerfile.skinny
+    ports: 
+      - "8000:8000"
