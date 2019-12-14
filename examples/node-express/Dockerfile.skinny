@@ -1,4 +1,4 @@
-# This stage installs our modules
+# This stage installs our modules - image size ~46 MB
 FROM mhart/alpine-node:latest as builder
 WORKDIR /app
 COPY package.json package-lock.json ./
