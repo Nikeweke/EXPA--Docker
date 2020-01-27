@@ -21,6 +21,7 @@
 * **192.168.99.100** - порт на Windows 7 чтобы доступититься к порту контейнера (на Linux & Win10 - `127.0.0.1` OR `localhost`)
 * `docker build -t [image-name] .` - в конце - Не забудьте точку !
 * `CMD`  может быть только одно в Dockerfile
+* Hot reload будет работать только на Win10 и Linux
 
 
 ### `docker`
