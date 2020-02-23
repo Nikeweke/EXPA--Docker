@@ -1,0 +1,29 @@
+version: "3"
+services:
+  api:
+    container_name: "api"
+    restart: always
+    build: ./api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    command:
+      "node app"
+
+  mongo:
+    container_name: "mongo"
+    build: ./mongo
+    volumes:
+      - /mongo-volume:/data/db
+    environment: 
+      # we cant connect to our db with these creds.
+      # these creds we will use for creating user that can be allowed 
+      # to connect to our db
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=12345
+    ports:
+      - "27017:27017"
+
+
+
