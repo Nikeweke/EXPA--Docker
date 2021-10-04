@@ -81,6 +81,9 @@ docker push nickname/my_image
 docker pull nickname/my_image
 ```
 
+---
+
+
 ### Вопросы и Ответы
 **1)** Как уменьшить размер образа? допустим nodejs official весит 400 мб в свернутом состоянии. 
 > * Использовать еще меньший отцовский образ, например: `ubuntu - 43mb` или `alpine - 5mb`
