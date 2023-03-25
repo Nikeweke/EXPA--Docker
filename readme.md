@@ -21,6 +21,7 @@
 ### Enable HyperV
 
 > https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+> https://forums.docker.com/t/cannot-enable-hyper-v-service/94086/9
 
 ###### Run in powershell as admin
 ```sh
