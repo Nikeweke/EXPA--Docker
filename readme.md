@@ -15,6 +15,18 @@
 * **Контейнер** - это запущенный образ. Из образов создаються и запускаютьс контейнеры.
 * **Dockerfile** -  инструкции для построения образа. Это простой способ автоматизировать процесс создания образа.
 * **docker-compose.yml** - инструкции для сборки нескольких контейнеров и их взаимодействия
+<br />
+
+
+### Enable HyperV
+
+> https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+
+###### Run in powershell as admin
+```sh
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+<br />
 
 ### ВАЖНО!
 * Использовать лучше Hyper-V вместо WSL2 потому что WSL2 использует ipv6 для доступа к контейнерам, а Hyper-V ipv4. Если использовать WSL2 нельзя доступиться по адресу localhost(127.0.0.1) к контейнерам.
@@ -23,7 +35,7 @@
 * `docker build -t [image-name] .` - в конце - Не забудьте точку !
 * `CMD`  может быть только одно в Dockerfile
 * Hot reload будет работать только на Win10 и Linux
-
+<br />
 
 ### `docker run`
 * **docker run -d -P [image-name]** - запустить образ, тем самым создаеться контейнер, если образ не находитьс локально тогда исчет на докер хабе и скачиваеться, запускаеться. `-d` -  открепить процес от консоли,  `-P` - призначить рандомный порт к порту приложения внутри Docker
